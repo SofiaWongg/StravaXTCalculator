@@ -17,7 +17,7 @@ struct Activity: Codable{
   
   //Value added to get date format
   var startDateFormatted: Date? {
-          let dateFormatter = ISO8601DateFormatter()
-          return dateFormatter.date(from: start_date)
-      }
+    let dateFormatter = ISO8601DateFormatter()
+    return dateFormatter.date(from: start_date)
+  }
 }

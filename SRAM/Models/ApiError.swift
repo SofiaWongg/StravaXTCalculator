@@ -17,15 +17,15 @@ enum ApiError: LocalizedError { //TODO: fill these out!
   var errorDescription: String? {
     switch self {
     case .invalidURL:
-      return ""
+      return "Invalid URL provided"
     case .unexpectedResponse:
-      return ""
+      return "Unexpected server response"
     case .decodingFailed:
-      return ""
-    case.httpError(let statusCode):
+      return "Failed to decode response"
+    case .httpError(let statusCode):
       return "HTTP Error: \(statusCode)"
     case .unknownError(let error):
-      return ""
+      return "Unknown error: \(error.localizedDescription)"
     }
   }
 }

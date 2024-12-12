@@ -21,19 +21,19 @@ struct WeeklySnapshotView: View {
             HStack {
               VStack {
                 Text("Run")
-                Text("\(toMiles(distanceInMeters: mileage[.run] ?? 0.0)) mi").bold()
+                Text("\(toStringMiles(distanceInMeters: mileage[.run] ?? 0.0)) mi").bold()
               }
               .frame(maxWidth: .infinity)
               
               VStack {
                 Text("Swim")
-                Text("\(toMiles(distanceInMeters: mileage[.swim] ?? 0.0)) mi").bold()
+                Text("\(toStringMiles(distanceInMeters: mileage[.swim] ?? 0.0)) mi").bold()
               }
               .frame(maxWidth: .infinity)
               
               VStack {
                 Text("Ride")
-                Text("\(toMiles(distanceInMeters: mileage[.ride] ?? 0.0)) mi").bold()
+                Text("\(toStringMiles(distanceInMeters: mileage[.ride] ?? 0.0)) mi").bold()
               }
               .frame(maxWidth: .infinity)
             }
@@ -47,16 +47,16 @@ struct WeeklySnapshotView: View {
 }
 
 #Preview {
-    WeeklySnapshotView(weeklyMileage: [
-        Date(): [
-            .run: 5000.0,
-            .swim: 2000.0,
-            .ride: 10000.0
-        ],
-        Calendar.current.date(byAdding: .weekOfYear, value: -1, to: Date())!: [
-            .run: 4500.0, 
-            .swim: 1500.0,
-            .ride: 9000.0
-        ]
-    ])
+  WeeklySnapshotView(weeklyMileage: [
+    Date(): [
+      .run: 5000.0,
+      .swim: 2000.0,
+      .ride: 10000.0
+    ],
+    Calendar.current.date(byAdding: .weekOfYear, value: -1, to: Date())!: [
+      .run: 4500.0, 
+        .swim: 1500.0,
+      .ride: 9000.0
+    ]
+  ])
 }

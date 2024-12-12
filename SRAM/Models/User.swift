@@ -8,15 +8,15 @@
 import Foundation
 
 struct User {
-    let accessToken: String
-    let refreshToken: String
-    let expiresAt: Date
-    let athlete: AthleteSummary
-
-    init(response: StravaToken) {
-        self.accessToken = response.access_token
-        self.refreshToken = response.refresh_token
-        self.expiresAt = Date(timeIntervalSince1970: TimeInterval(response.expires_at))
-        self.athlete = response.athlete
-    }
+  let access_token: String
+  let refresh_token: String
+  let expires_at: Date
+  let athlete: AthleteSummary
+  
+  init(response: StravaToken) {
+    self.access_token = response.access_token
+    self.refresh_token = response.refresh_token
+    self.expires_at = Date(timeIntervalSince1970: TimeInterval(response.expires_at))
+    self.athlete = response.athlete
+  }
 }

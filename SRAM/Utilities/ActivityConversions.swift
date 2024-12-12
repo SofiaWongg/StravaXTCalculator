@@ -9,19 +9,32 @@ import Foundation
 
 //conversion ratios from one activity type to another
 let conversionMatrix: [ActivityTypes: [ActivityTypes: Double]] = [
-    .run : [.run: 1.0, .swim: 0.25, .ride: 3.0],
-    .swim: [.run: 4.0, .swim: 1.0, .ride: 12.0],
-    .ride: [.run: 0.33, .swim: 0.083, .ride: 1.0]
+  .run : [.run: 1.0, .swim: 0.25, .ride: 3.0],
+  .swim: [.run: 4.0, .swim: 1.0, .ride: 12.0],
+  .ride: [.run: 0.33, .swim: 0.083, .ride: 1.0]
 ]
 
 //converts one event distance to another using conversion matrix values
 func convertDistance(from: ActivityTypes, to: ActivityTypes, distance: Double) -> Double? {
-    guard let fromConversions = conversionMatrix[from],
-          let conversionRatio = fromConversions[to] else {
-        print("Conversion from \(from.rawValue) to \(to.rawValue) is not defined")
-        return nil
+  guard let fromConversions = conversionMatrix[from],
+        let conversionRatio = fromConversions[to] else {
+    print("Conversion from \(from.rawValue) to \(to.rawValue) is not defined")
+    return nil
+  }
+  return distance * conversionRatio
+}
+
+//does conversion and returns mile representation of conversion
+func convertWeeklyMiles(weeklyMileage: [Date: [ActivityTypes: Double]], targetType: ActivityTypes) -> [Date: [ActivityTypes: Double]] {
+  var convertedValues: [Date: [ActivityTypes: Double]] = [:]
+  for (date, activities) in weeklyMileage{
+    var updatedActivities: [ActivityTypes: Double] = [:]
+    for (activity, miles) in activities {
+      updatedActivities[activity] = convertDistance(from: activity, to: targetType, distance: miles) ?? 0.00
     }
-    return distance * conversionRatio
+    convertedValues[date] = updatedActivities
+  }
+  return convertedValues
 }
 
 func sortActivities(activities: [Activity]) -> [ActivityTypes: Double] {
@@ -41,10 +54,16 @@ func sortActivities(activities: [Activity]) -> [ActivityTypes: Double] {
   return mileCounter
 }
 
-func toMiles(distanceInMeters: Double) -> String {
-    let metersPerMile = 1609.34
-    let miles = distanceInMeters / metersPerMile
-    return String(format: "%.2f", miles)
+func toStringMiles(distanceInMeters: Double) -> String {
+  let metersPerMile = 1609.34
+  let miles = distanceInMeters / metersPerMile
+  return String(format: "%.2f", miles)
+}
+
+func toMiles(distanceInMeters: Double) -> Double {
+  let metersPerMile = 1609.34
+  let miles = distanceInMeters / metersPerMile
+  return miles
 }
 
 func getMileageByWeek(activities: [Activity], weeks: Int) -> [Date: [ActivityTypes: Double]] {
@@ -78,12 +97,10 @@ func getMileageByWeek(activities: [Activity], weeks: Int) -> [Date: [ActivityTyp
     
     weeklyMileage[weekStartDate] =  sortActivities(activities: weeklyActivities)
     
-    print("Week Start: \(weekStartDate), Week End: \(Date(timeIntervalSince1970: Double(endOfWeek))) Activities: \(weeklyActivities.count)")
     // Move to prev week
     endOfWeek = startOfWeek - 1 //1 second diff
     weekCounter += 1
   }
   
-  print(weeklyMileage)
   return weeklyMileage
 }

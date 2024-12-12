@@ -43,3 +43,10 @@ func formatDate(_ date: Date) -> String {
       return formatter.string(from: date)
  }
 
+func formatDateShort(_ date: Date) -> String {
+     let formatter = DateFormatter()
+     formatter.dateFormat = "MMM dd" // Example: "Dec 08, 2024"
+      formatter.timeZone = TimeZone(secondsFromGMT: 0)
+      return formatter.string(from: date)
+ }
+
