@@ -11,6 +11,17 @@
 		025ED0042D0604A500CA38A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025ED0032D0604A500CA38A2 /* ContentView.swift */; };
 		025ED0062D0604A600CA38A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 025ED0052D0604A600CA38A2 /* Assets.xcassets */; };
 		025ED0092D0604A600CA38A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 025ED0082D0604A600CA38A2 /* Preview Assets.xcassets */; };
+		025ED0152D0605FE00CA38A2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025ED0142D0605FE00CA38A2 /* Constants.swift */; };
+		025ED0182D060DAF00CA38A2 /* StravaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025ED0172D060DAF00CA38A2 /* StravaAPI.swift */; };
+		025ED01C2D068D2C00CA38A2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025ED01B2D068D2C00CA38A2 /* HomeView.swift */; };
+		025ED01E2D06944800CA38A2 /* StravaToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025ED01D2D06944800CA38A2 /* StravaToken.swift */; };
+		025ED0222D06A07C00CA38A2 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025ED0212D06A07C00CA38A2 /* ApiError.swift */; };
+		025ED0242D07407F00CA38A2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025ED0232D07407F00CA38A2 /* User.swift */; };
+		025ED0282D0740D700CA38A2 /* AthleteSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025ED0272D0740D600CA38A2 /* AthleteSummary.swift */; };
+		025ED02C2D07A6BA00CA38A2 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025ED02B2D07A6BA00CA38A2 /* Activity.swift */; };
+		025ED02E2D07AA1C00CA38A2 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025ED02D2D07AA1B00CA38A2 /* DateUtils.swift */; };
+		025ED0322D08DFAF00CA38A2 /* ActivityConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025ED0312D08DFAF00CA38A2 /* ActivityConversions.swift */; };
+		025ED0342D08E89500CA38A2 /* StravaActivityTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025ED0332D08E89500CA38A2 /* StravaActivityTypes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +30,18 @@
 		025ED0032D0604A500CA38A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		025ED0052D0604A600CA38A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		025ED0082D0604A600CA38A2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		025ED0142D0605FE00CA38A2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		025ED0162D0607AA00CA38A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		025ED0172D060DAF00CA38A2 /* StravaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaAPI.swift; sourceTree = "<group>"; };
+		025ED01B2D068D2C00CA38A2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		025ED01D2D06944800CA38A2 /* StravaToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaToken.swift; sourceTree = "<group>"; };
+		025ED0212D06A07C00CA38A2 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		025ED0232D07407F00CA38A2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		025ED0272D0740D600CA38A2 /* AthleteSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteSummary.swift; sourceTree = "<group>"; };
+		025ED02B2D07A6BA00CA38A2 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		025ED02D2D07AA1B00CA38A2 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		025ED0312D08DFAF00CA38A2 /* ActivityConversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityConversions.swift; sourceTree = "<group>"; };
+		025ED0332D08E89500CA38A2 /* StravaActivityTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaActivityTypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +74,12 @@
 		025ED0002D0604A500CA38A2 /* SRAM */ = {
 			isa = PBXGroup;
 			children = (
-				025ED0012D0604A500CA38A2 /* SRAMApp.swift */,
-				025ED0032D0604A500CA38A2 /* ContentView.swift */,
+				025ED0162D0607AA00CA38A2 /* Info.plist */,
+				025ED0132D0605CD00CA38A2 /* App */,
+				025ED0122D0605BC00CA38A2 /* Utilities */,
+				025ED0112D0605AC00CA38A2 /* Models */,
+				025ED0102D0605A100CA38A2 /* Networking */,
+				025ED00F2D06059200CA38A2 /* Views */,
 				025ED0052D0604A600CA38A2 /* Assets.xcassets */,
 				025ED0072D0604A600CA38A2 /* Preview Content */,
 			);
@@ -65,6 +92,54 @@
 				025ED0082D0604A600CA38A2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		025ED00F2D06059200CA38A2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				025ED0032D0604A500CA38A2 /* ContentView.swift */,
+				025ED01B2D068D2C00CA38A2 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		025ED0102D0605A100CA38A2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				025ED0172D060DAF00CA38A2 /* StravaAPI.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		025ED0112D0605AC00CA38A2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				025ED01D2D06944800CA38A2 /* StravaToken.swift */,
+				025ED0212D06A07C00CA38A2 /* ApiError.swift */,
+				025ED0232D07407F00CA38A2 /* User.swift */,
+				025ED0272D0740D600CA38A2 /* AthleteSummary.swift */,
+				025ED02B2D07A6BA00CA38A2 /* Activity.swift */,
+				025ED0332D08E89500CA38A2 /* StravaActivityTypes.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		025ED0122D0605BC00CA38A2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				025ED0142D0605FE00CA38A2 /* Constants.swift */,
+				025ED02D2D07AA1B00CA38A2 /* DateUtils.swift */,
+				025ED0312D08DFAF00CA38A2 /* ActivityConversions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		025ED0132D0605CD00CA38A2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				025ED0012D0604A500CA38A2 /* SRAMApp.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +212,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				025ED0282D0740D700CA38A2 /* AthleteSummary.swift in Sources */,
 				025ED0042D0604A500CA38A2 /* ContentView.swift in Sources */,
+				025ED0322D08DFAF00CA38A2 /* ActivityConversions.swift in Sources */,
+				025ED0182D060DAF00CA38A2 /* StravaAPI.swift in Sources */,
+				025ED01E2D06944800CA38A2 /* StravaToken.swift in Sources */,
+				025ED0342D08E89500CA38A2 /* StravaActivityTypes.swift in Sources */,
 				025ED0022D0604A500CA38A2 /* SRAMApp.swift in Sources */,
+				025ED0242D07407F00CA38A2 /* User.swift in Sources */,
+				025ED01C2D068D2C00CA38A2 /* HomeView.swift in Sources */,
+				025ED0222D06A07C00CA38A2 /* ApiError.swift in Sources */,
+				025ED02E2D07AA1C00CA38A2 /* DateUtils.swift in Sources */,
+				025ED02C2D07A6BA00CA38A2 /* Activity.swift in Sources */,
+				025ED0152D0605FE00CA38A2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +361,7 @@
 				DEVELOPMENT_TEAM = L8UMZZA972;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SRAM/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -285,7 +372,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sofia.SRAM;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crosstrain.oauth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -304,6 +391,7 @@
 				DEVELOPMENT_TEAM = L8UMZZA972;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SRAM/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -314,7 +402,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sofia.SRAM;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crosstrain.oauth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
