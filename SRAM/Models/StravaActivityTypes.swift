@@ -15,5 +15,5 @@ import Foundation
 enum ActivityTypes: String {
   case run = "Run"
   case swim = "Swim"
-  case bike = "Bike"
+  case ride = "Ride"
 }

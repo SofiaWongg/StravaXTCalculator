@@ -22,6 +22,7 @@
 		025ED02E2D07AA1C00CA38A2 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025ED02D2D07AA1B00CA38A2 /* DateUtils.swift */; };
 		025ED0322D08DFAF00CA38A2 /* ActivityConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025ED0312D08DFAF00CA38A2 /* ActivityConversions.swift */; };
 		025ED0342D08E89500CA38A2 /* StravaActivityTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025ED0332D08E89500CA38A2 /* StravaActivityTypes.swift */; };
+		025ED0382D0AADB300CA38A2 /* WeeklySnapshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025ED0372D0AADB300CA38A2 /* WeeklySnapshotView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		025ED02D2D07AA1B00CA38A2 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		025ED0312D08DFAF00CA38A2 /* ActivityConversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityConversions.swift; sourceTree = "<group>"; };
 		025ED0332D08E89500CA38A2 /* StravaActivityTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaActivityTypes.swift; sourceTree = "<group>"; };
+		025ED0372D0AADB300CA38A2 /* WeeklySnapshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklySnapshotView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				025ED0032D0604A500CA38A2 /* ContentView.swift */,
 				025ED01B2D068D2C00CA38A2 /* HomeView.swift */,
+				025ED0372D0AADB300CA38A2 /* WeeklySnapshotView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				025ED0282D0740D700CA38A2 /* AthleteSummary.swift in Sources */,
+				025ED0382D0AADB300CA38A2 /* WeeklySnapshotView.swift in Sources */,
 				025ED0042D0604A500CA38A2 /* ContentView.swift in Sources */,
 				025ED0322D08DFAF00CA38A2 /* ActivityConversions.swift in Sources */,
 				025ED0182D060DAF00CA38A2 /* StravaAPI.swift in Sources */,

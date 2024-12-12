@@ -16,23 +16,45 @@ struct HomeView: View {
   @State private var swimMeters: Double = 0.0
   @State private var activities: [Activity] = []
   
+  @State private var weeklyMileage: [Date: [ActivityTypes: Double]] = [:]
+  
+  
     var body: some View {
       Group{
         if let loggedInUser = user, isLoggedIn{
           VStack{
             Text("Welcome back \(loggedInUser.athlete.firstname) \(loggedInUser.athlete.lastname)!")
             Text("Lets check out those stats")
-            Text("Total Miles Biked: \(toMiles(distanceInMeters:bikeMeters))")
-            Text("Total Miles Run: \(toMiles(distanceInMeters: runMeters))")
-            Text("Total Miles Swum: \(toMiles(distanceInMeters:swimMeters))")
+            VStack{
+              Text("Totals").bold()
+              Text("Miles: \(toMiles(distanceInMeters: bikeMeters + runMeters + swimMeters))")
+              Text("Converted Miles: XX.XX")
+              HStack{
+                VStack {
+                  Text("Run")
+                  Text("\(toMiles(distanceInMeters: runMeters)) mi").bold()
+                }
+                VStack {
+                  Text("Ride")
+                  Text("\(toMiles(distanceInMeters:bikeMeters)) mi").bold()
+                }
+                VStack {
+                  Text("Swim")
+                  Text("\(toMiles(distanceInMeters: swimMeters)) mi").bold()
+                }
+              } .padding()
+            }
             
             Text("See conversions for:")
             HStack{
-              Button("Bike"){}.background(.green).buttonStyle(.bordered)
+              Button("Ride"){}.background(.green).buttonStyle(.bordered)
               Button("Swim"){}.background(.yellow).buttonStyle(.bordered)
               Button("Run"){}.background(.cyan).buttonStyle(.bordered)
               
             }
+            
+            WeeklySnapshotView(weeklyMileage: weeklyMileage)
+          
 
             Button("Sign out"){ //should actually deauthorize user: POST https://www.strava.com/oauth/deauthorize
               user = nil
@@ -40,10 +62,6 @@ struct HomeView: View {
             }
             .buttonStyle(.bordered)
             
-            //Remove this later
-            List(activities, id: \.id) { activity in
-              Text("\(activity.type) - \(Int(activity.distance/1609)) miles in \(activity.moving_time/60) minutes")
-                                }
           }
         }else{
           ContentView()
@@ -52,6 +70,7 @@ struct HomeView: View {
         Task {
           await loadActivities()
           getMileage()
+          getSortedMileage()
         }
       }
     }
@@ -66,7 +85,6 @@ struct HomeView: View {
       do {
           let fetchedActivities = try await stravaAPI.fetchActivities(accessToken: accessToken)
           activities = fetchedActivities
-          print("Fetched Activities: \(activities)")
       } catch {
           print("Error Fetching Activities: \(error)")
       }
@@ -75,13 +93,18 @@ struct HomeView: View {
   private func getMileage()  {
     if activities.count != 0{
       var mileCount: [ActivityTypes: Double] = sortActivities(activities: activities)
-      bikeMeters = mileCount[.bike] ?? 0.0
+      bikeMeters = mileCount[.ride] ?? 0.0
       runMeters = mileCount[.run] ?? 0.0
       swimMeters = mileCount[.swim] ?? 0.0
     }
 }
-
-
+  
+  private func getSortedMileage() {
+    if !activities.isEmpty {
+      weeklyMileage = getMileageByWeek(activities: activities, weeks: 4)
+    }
+  }
+  
 
 }
 
