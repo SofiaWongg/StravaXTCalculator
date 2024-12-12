@@ -55,18 +55,14 @@ struct ContentView: View {
   private func auth() async {
     do {
       let code = try await stravaAPI.authenticate()
-      let result = try await stravaAPI.getToken(code: code)
+      let user = try await stravaAPI.getToken(code: code)
       
-      switch result{
-      case let .success(user):
         self.isLoggedIn = true
         self.loggedInUser = user
         self.errorMessage = nil
-      case let .failure(error):
-        print("error during auth \(error)")
-        self.errorMessage = "Authentication failed: \(error.localizedDescription)"
-      }
-    } catch {
+      } catch {
+      print("error during auth \(error)")
+      self.errorMessage = "Authentication failed: \(error.localizedDescription)"
       errorMessage = "Auth failed: \(error.localizedDescription)"
     }
     isProcessingLogin = false

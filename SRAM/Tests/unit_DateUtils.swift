@@ -11,9 +11,19 @@ import XCTest
 final class unit_DateUtils: XCTestCase {
   
   func testGetEpochTimestamp() {
+    let fixedTime = 1700000000
     let weeksAgo = 4
-    let expectedTimestamp = Int(Date().timeIntervalSince1970) - (weeksAgo * 7 * 24 * 60 * 60)
-    let actualTimestamp = getEpochTimestamp(weeksAgo: weeksAgo)
+    let expectedTimestamp = fixedTime - (weeksAgo * 7 * 24 * 60 * 60)
+    let actualTimestamp = getEpochTimestamp(weeksAgo: weeksAgo, currentTime: fixedTime)
+    
+    XCTAssertEqual(actualTimestamp, expectedTimestamp)
+  }
+  
+  func testGetEpochTimestampZero() {
+    let fixedTime = 1700000000
+    let weeksAgo = 0
+    let expectedTimestamp = fixedTime - (weeksAgo * 7 * 24 * 60 * 60)
+    let actualTimestamp = getEpochTimestamp(weeksAgo: weeksAgo, currentTime: fixedTime)
     
     XCTAssertEqual(actualTimestamp, expectedTimestamp)
   }
