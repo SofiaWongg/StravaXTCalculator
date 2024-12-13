@@ -4,7 +4,6 @@
 
 This application converts your Strava activity mileage across different sports. Ideal for users recovering from injury or those looking to add variety to their workout routine but still hit consistent aerobic goals. After logging into your Strava account, you’ll be able to see your mileage totals and choose to convert them into equivalent mileage for your selected sport.
 
-
 ## How to Build and Run
 
 ### Prerequisites
@@ -94,4 +93,4 @@ This application converts your Strava activity mileage across different sports. 
    - Refactor key components to support scalability.
 
 ---
-
+https://github.com/user-attachments/assets/089a6541-3467-413d-948b-04384f6249e5
