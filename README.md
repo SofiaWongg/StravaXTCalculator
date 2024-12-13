@@ -15,7 +15,7 @@ This application converts your Strava activity mileage across different sports. 
    ```bash
    git clone https://github.com/SofiaWongg/StravaXTCalculator.git
 2. Open xcodeproj in Xcode
-3. Add environmet variables (instructions below)
+3. Add environment variables (instructions below)
 4. Build and run the app (cmd + R)
 
 ### Environment Variables
