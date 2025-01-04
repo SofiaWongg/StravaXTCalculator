@@ -19,7 +19,7 @@ This application converts your Strava activity mileage across different sports. 
 4. Build and run the app (cmd + R)
 
 ### Environment Variables
-*Must have a strava app Setup, if not refer to instructions below or use values passed through email
+*Must have a strava app Setup
 1. Set up environment variables for the app to securely access the Strava API:
    - `CLIENT_ID`: Your Strava client ID.
    - `CLIENT_SECRET`: Your Strava client secret.
@@ -67,6 +67,9 @@ This application converts your Strava activity mileage across different sports. 
 
 4. **Custom Date Ranges**
    - Allow users to select specific date ranges for viewing and comparing their activity statistics.
+     
+5. **Allowing for Multiple Athlete Connections**
+   - Applying for strava review https://share.hsforms.com/1VXSwPUYqSH6IxK0y51FjHwcnkd8
 
 ---
 
