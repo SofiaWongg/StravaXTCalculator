@@ -46,7 +46,9 @@ This application converts your Strava activity mileage across different sports. 
 - Ride
 - Swim
 - Run
-*activities marked private are not shown
+  
+  _*activities marked private are not shown_
+  
 ---
 
 ## Future Considerations
